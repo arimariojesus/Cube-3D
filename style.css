@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  perspective: 800px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotation {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(720deg); }
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  /* animation: rotation 10s infinite linear; */
+}
+
+.face {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+}
+
+.face_left {
+  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  transform: translateX(-50%) rotateY(-90deg);
+}
+
+.face_right {
+  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  transform: translateX(50%) rotateY(90deg);
+}
+
+.face_back {
+  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  transform: translateZ(-100px) scaleX(-1);
+}
+
+.face_front {
+  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  transform: translateZ(100px);
+}
+
+.face_bottom {
+  background-image: url('https://uploaddeimagens.com.br/images/000/955/231/full/bottom.jpg?1497835434');
+  transform: rotateX(90deg) translateZ(-100px);
+}
+
+.face_top {
+  background-image: url('https://uploaddeimagens.com.br/images/000/955/233/thumb/top.jpg?1497835487');
+  transform: rotateX(90deg) translateZ(100px);
+}

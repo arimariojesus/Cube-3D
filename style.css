@@ -18,17 +18,20 @@ html, body {
   justify-content: center;
 }
 
-@keyframes rotation {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(720deg); }
-}
-
 .cube {
   width: 200px;
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  /* animation: rotation 10s infinite linear; */
+}
+.scene .shadow {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #b1b1b1;
+  -webkit-box-shadow: 0 0 100px 150px #b1b1b1;
+  box-shadow: 0 0 100px 150px #b1b1b1;
+  transform: rotateX(90deg) translateZ(-200px);
 }
 
 .face {

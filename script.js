@@ -1,4 +1,5 @@
 const cube = document.querySelector('.cube');
+const shadow = document.querySelector('.shadow');
 let dragOfX = 0, dragOfY = 0;
 let lastRotateX = 0, lastRotateY = 0;
 
@@ -12,27 +13,17 @@ const dragStart = (e) => {
 
 const dragMove = (e) => {
   let coordX = (e.pageX - dragOfX);
-  let coordY = lastRotateY < 0 ? (e.pageY - dragOfY) : -(e.pageY - dragOfY);
-  cube.style.transform = 'rotateY(' + (lastRotateY + coordX) + 'deg)' + ' rotateX(' + (lastRotateX + coordY) + 'deg)';
+  let coordY = (e.pageY - dragOfY);
+  cube.style.transform = 'rotateY(' + (lastRotateY + coordX) + 'deg)' + ' rotateX(' + (lastRotateX - coordY) + 'deg)';
+  shadow.style.transform = 'rotateX(90deg) translateZ(-200px) rotateZ(' + (lastRotateY - coordX) + 'deg)';
 }
 
 const dragEnd = (e) => {
-  if ((lastRotateY + (e.pageX - dragOfX) < 720)) {
-    if (lastRotateY + (e.pageX - dragOfX) > -720) {
-      lastRotateY = lastRotateY + (e.pageX - dragOfX);
-    }else {
-      lastRotateY = lastRotateY + (e.pageX - dragOfX) + 720;
-    }
-  }else {
-    lastRotateY = lastRotateY + (e.pageX - dragOfX) - 720;
-  }
-  lastRotateX += (e.pageY - dragOfY);
-
-  console.log(lastRotateY);
+  lastRotateY += (e.pageX - dragOfX);
+  lastRotateX -= (e.pageY - dragOfY);
+  
   removeEventListener('mousemove', dragMove);
   removeEventListener('mouseup', dragEnd);
 }
 
-// faces.forEach(face => {
-  cube.addEventListener('mousedown', dragStart);
-// });
+cube.addEventListener('mousedown', dragStart);

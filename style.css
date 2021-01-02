@@ -56,31 +56,31 @@ body {
 }
 
 .face_left {
-  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  background-image: url('./assets/side.jpg');
   transform: translateX(-50%) rotateY(-90deg);
 }
 
 .face_right {
-  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  background-image: url('./assets/side.jpg');
   transform: translateX(50%) rotateY(90deg);
 }
 
 .face_back {
-  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  background-image: url('./assets/side.jpg');
   transform: translateZ(-100px) scaleX(-1);
 }
 
 .face_front {
-  background-image: url('https://uploaddeimagens.com.br/images/000/955/232/full/side.jpg?1497835464');
+  background-image: url('./assets/side.jpg');
   transform: translateZ(100px);
 }
 
 .face_bottom {
-  background-image: url('https://uploaddeimagens.com.br/images/000/955/231/full/bottom.jpg?1497835434');
+  background-image: url('./assets/bottom.jpg');
   transform: rotateX(90deg) translateZ(-100px);
 }
 
 .face_top {
-  background-image: url('https://uploaddeimagens.com.br/images/000/955/233/thumb/top.jpg?1497835487');
+  background-image: url('./assets/top.jpg');
   transform: rotateX(90deg) translateZ(100px);
 }
